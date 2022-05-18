@@ -8,10 +8,19 @@
     ],
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "magento/magento-composer-installer": true,
+            "magento/inventory-composer-installer": true,
+            "laminas/laminas-dependency-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "require": {
-        "magento/product-community-edition": "2.3.5-p1"
+        "magento/product-community-edition": "2.3.5-p1",
+        "mageplaza/magento-2-spanish-language-pack": "dev-master",
+        "mageplaza/module-smtp": "^4.7",
+        "stripe/stripe-payments": "^3.1"
     },
     "require-dev": {
         "allure-framework/allure-phpunit": "~1.2.0",
