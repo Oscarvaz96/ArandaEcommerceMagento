@@ -34,8 +34,17 @@
                                                                 <item name="city" xsi:type="array">
                                                                     <item name="sortOrder" xsi:type="string">88</item>
                                                                 </item>
-                                                                <item name="street" xsi:type="array">
+                                                                <item name="vat_id" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">89</item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                        <item name="validate-rfc" xsi:type="boolean">true</item>
+                                                                    </item>
+                                                                </item> 
+                                                                 <item name="company" xsi:type="array">
                                                                     <item name="sortOrder" xsi:type="string">90</item>
+                                                                </item>
+                                                                <item name="street" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">91</item>
                                                                 </item>
                                                                 <item name="postcode" xsi:type="array">
                                                                     <item name="sortOrder" xsi:type="string">92</item>
