@@ -12,7 +12,9 @@ class Plugin
         //RFC
         $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['vat_id']['label'] = 'RFC (Solo si requiere factura)';
-
+        //Razón Social
+        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        ['shippingAddress']['children']['shipping-address-fieldset']['children']['company']['label'] = 'Razón Social (Solo si requiere factura)';
         return $jsLayout;
     }
 }
