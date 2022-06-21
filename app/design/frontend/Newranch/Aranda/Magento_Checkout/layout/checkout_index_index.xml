@@ -58,6 +58,26 @@
                                                 </item>
                                             </item>
                                         </item>
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="beforeMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="custom-form" xsi:type="array">
+                                                                    <!-- Add this item to configure your js file  -->
+                                                                    <item name="component" xsi:type="string">Oscar_Checkout/js/requiere-factura</item>
+                                                                    <!-- <item name="config" xsi:type="array">
+                                                                     
+                                                                        <item name="template" xsi:type="string">Oscar_Checkout/checkout/requiereFactura</item>
+                                                                    </item> -->
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
                                     </item>
                                 </item>
                             </item>
