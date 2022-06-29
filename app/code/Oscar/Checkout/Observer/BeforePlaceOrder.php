@@ -16,11 +16,6 @@ class BeforePlaceOrder implements ObserverInterface
 
     public function execute(Observer $observer)
     {
-        $writer = new \Laminas\Log\Writer\Stream(BP . '/var/log/test.log');
-        $logger = new \Laminas\Log\Logger();
-        $logger->addWriter($writer);
-        $logger->info('<<<<<<Entramos al OBSERVER>>>>>>');
-
         $order = $observer->getOrder();
         $quoteId = $order->getQuoteId();
         $quote  = $this->quoteFactory->create()->load($quoteId);

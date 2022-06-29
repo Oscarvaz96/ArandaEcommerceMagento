@@ -28,8 +28,6 @@ define(
                     else{
                         checkVal = 0;
                     }
-                    console.log(newValue);
-                    console.log(checkVal);
                     $.ajax({
                         showLoader: true,
                         url: linkUrls,

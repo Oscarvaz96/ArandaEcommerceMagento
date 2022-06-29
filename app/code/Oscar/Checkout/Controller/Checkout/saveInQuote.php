@@ -34,18 +34,10 @@ class saveInQuote extends \Magento\Framework\App\Action\Action {
     }
 
     public function execute(){
-        $writer = new \Laminas\Log\Writer\Stream(BP . '/var/log/test.log');
-        $logger = new \Laminas\Log\Logger();
-        $logger->addWriter($writer);
-        $logger->info('<<<<<<Entramos al controller>>>>>>');
-
-
         $checkVal = $this->getRequest()->getParam('checkVal');
-        $logger->info($checkVal);
         $quoteId = $this->checkoutSession->getQuoteId();
         $quote = $this->quoteRepository->get($quoteId);
         $quote->setFactura($checkVal);
         $quote->save();
-        $logger->info('Salimos del controller');
     }
 }
