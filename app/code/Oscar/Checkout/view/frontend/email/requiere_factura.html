@@ -1,0 +1,17 @@
+<!--@subject {{trans "Un cliente require factura"}} @-->
+{{template config_path="design/email/header_template"}}
+<div>
+    <h2>Un cliente necesita factura:</h2>
+    <span><strong>Id de Orden: </strong>#{{var order_id}}</span>
+    <br>
+    <span><strong>Nombre: </strong>{{var customer|escape}}</span>
+    <br>
+    <span><strong>Correo: </strong>{{var email}}</span>
+    <br>
+    <span><strong>Razón Social: </strong>{{var company_name}}</span>
+    <br>
+    <span><strong>RFC: </strong>{{var rfc}}</span>
+    
+</div>
+
+{{template config_path="design/email/footer_template"}}
