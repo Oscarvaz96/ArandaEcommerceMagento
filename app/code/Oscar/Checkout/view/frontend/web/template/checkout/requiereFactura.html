@@ -1,1 +1,14 @@
-<input type="checkbox" id="requiereFactura" name="requiereFactura" value="" data-bind='checked: CheckVals'/><label for="requiereFactura">¿Requiere factura?</label><br>
+<div class="container">
+    <input type="checkbox" id="requiereFactura" name="requiereFactura" value="" data-bind='checked: CheckVals'/><label for="requiereFactura">¿Requiere factura?</label><br>
+    <div class="factura-content">
+        <form class="form" data-bind="submit: sendFactura">
+            <div class="form-group">
+                <label for="rfc-field">RFC</label>
+                <input type="text" name="rfc" id="rfc-field" value="" placeholder="XAXX010101000" data-bind='value: rfc'/>
+                <label for="rs-field">Razón Social</label>
+                <input type="text" name="razon_social" id="rs-field" value="" placeholder="Morales SA de C.V" data-bind='value: rs'/>
+            </div>
+            <button type="submit" class="action primary">Guardar</button>
+        </form>
+    </div>
+</div>
