@@ -13,48 +13,62 @@ define(
                 CheckVals: ko.observable(false),
                 rfc: ko.observable(''),
                 rs: ko.observable(''),
-                requiere_factura: ko.observable(false)
+                rfcFormat: ko.observable()
             },
             initObservable: function () {
     
-                 this._super()
+                this._super()
+                self = this;
 
-                //     .observe({
-                //         CheckVals: ko.observable(false), //default checked(true)
-                //     });
-                // var checkVal=0;
-                // self = this;
-                // this.CheckVals.subscribe(function (newValue) {
-                    
-                //     var linkUrls  = url.build('custom/checkout/saveInQuote');
-                //     if(newValue) {
-                //         checkVal = 1;
-                //     }
-                //     else{
-                //         checkVal = 0;
-                //     }
-                //     $.ajax({
-                //         showLoader: true,
-                //         url: linkUrls,
-                //         data: {checkVal : checkVal},
-                //         type: "POST",
-                //         dataType: 'json'
-                //     }).done(function (data) {
-                //         console.log('success');
-                //     });
-                // });
+                this.CheckVals.subscribe(function (newValue) {
+                    if(newValue) {
+                        //activa los campos requeridos
+                        $("#rfc-field").prop('required',true);
+                        $("#rs-field").prop('required',true);
+                        $("#constanciaFile").prop('required',true);
+                        $('button.checkout').attr('disabled', true);
+                    }
+                    else{
+                        //desactiva los campos requeridos
+                        $("#rfc-field").prop('required',false);
+                        $("#rs-field").prop('required',false);
+                        $("#constanciaFile").prop('required',false);
+                        $('button.checkout').attr('disabled', false);
+                    }
+                });
                 return this;
             },
             sendFactura: function(formElement){
-                console.log(formElement);
-                console.log('RFC: '+this.rfc());
-                console.log('RS: '+this.rs());
                 if(this.rfc().match(/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/)){
-                    console.log("RFC valido")
+                    this.rfcFormat("");
+                    var file = document.getElementById('constanciaFile').files[0];
+                    var form;
+                    if (typeof file != 'undefined') {
+                        form = new FormData();
+                        form.append('file', file);
+                        form.append('requiereFactura',1);
+                        form.append('rfc',this.rfc());
+                        form.append('rs',this.rs());
+                    }
+
+                    var postUrl  = url.build('custom/checkout/saveInQuote');
+                    $.ajax({
+                        showLoader: true,
+                        url: postUrl,
+                        data: form,
+                        type: "POST",
+                        dataType: 'json',
+                        processData: false,
+                        contentType: false,
+                    }).done(function (data){
+                        $('button.checkout').attr('disabled', false);
+                    });
+                    
                 }
                 else{
-                    console.log("RFC NO valido") 
+                    this.rfcFormat("RFC No valido");
                 }
+
             }
         });
     });
