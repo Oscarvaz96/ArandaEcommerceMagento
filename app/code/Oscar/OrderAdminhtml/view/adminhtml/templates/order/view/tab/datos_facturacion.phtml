@@ -35,6 +35,11 @@
                echo __('Razón Social') ?></th>
            <td><?php echo $block->getOrderCompany(); ?></td>
        </tr>
+       <tr>
+           <th><?php /* @escapeNotVerified */
+               echo __('Constancia de Situación Fiscal') ?></th>
+               <td><?php echo $block->getConstanciaFile(); ?></td>
+       </tr>
        </tbody>
    </table>
 </div>

@@ -3,8 +3,10 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="quote" resource="default" engine="innodb">
         <column xsi:type="varchar" name="factura" nullable="true" length="40" comment="Requiere Factura"/>
+        <column xsi:type="varchar" name="constancia" nullable="true" length="200" comment="Constancia de Situacion Fiscal"/>
     </table>
     <table name="sales_order" resource="default" engine="innodb">
         <column xsi:type="varchar" name="factura" nullable="true" length="40" comment="Requiere Factura"/>
+         <column xsi:type="varchar" name="constancia" nullable="true" length="200" comment="Constancia de Situacion Fiscal"/>
     </table>
 </schema>

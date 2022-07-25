@@ -91,6 +91,17 @@ class FacturacionTab extends \Magento\Backend\Block\Template implements \Magento
         $razon_social = $billing_address->getCompany();
         return $razon_social;
     }
+
+    /**
+    * Retrieve constancia file by vat_number
+    *
+    * @return string
+    */
+    public function getConstanciaFile()
+    {
+        $constancia = $this->getOrder()->getData('constancia');
+        echo '<a href="'.$constancia.'">Constancia</a>';
+    }
    /**
     * {@inheritdoc}
     */

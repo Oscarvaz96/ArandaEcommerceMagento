@@ -1,1 +1,17 @@
-<input type="checkbox" id="requiereFactura" name="requiereFactura" value="" data-bind='checked: CheckVals'/><label for="requiereFactura">¿Requiere factura?</label><br>
+<div class="container container-factura">
+    <input type="checkbox" id="requiereFactura" name="requiereFactura" value="" data-bind='checked: CheckVals'/><label for="requiereFactura">¿Requiere factura?</label><br>
+    <div class="factura-content" data-bind="visible: CheckVals">
+        <form class="form" data-bind="submit: sendFactura" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="rfc-field">RFC</label>
+                <input type="text" name="rfc" id="rfc-field" value="" placeholder="XAXX010101000" data-bind='value: rfc'/>
+                <p class='validationMessage' style="color: red;" data-bind="text: rfcFormat"></p>
+                <label for="rs-field">Razón Social</label>
+                <input type="text" name="razon_social" id="rs-field" value="" placeholder="Morales SA de C.V" data-bind='value: rs'/>
+                <label for="constancia-field">Constancia de Situación Fiscal</label>
+                <input type="file" id="constanciaFile" name="constanciaFile">
+            </div>
+            <button type="submit" class="action primary">Guardar</button>
+        </form>
+    </div>
+</div>
