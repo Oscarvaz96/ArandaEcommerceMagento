@@ -2,6 +2,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="https://use.fontawesome.com/releases/v5.7.1/css/all.css" src_type="url"/>
-        <!-- <css src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" src_type="url"/> -->
+        <css src="Oscar_HomePage::css/owl.carousel.css"/>
+        <css src="Oscar_HomePage::css/owl.theme.css"/>
+        <css src="Oscar_HomePage::css/owl.transitions.css"/>
+        <css src="Oscar_HomePage::css/fancybox/jquery.fancybox.css"/>
+        <css src="Oscar_HomePage::css/font-awesome.min.css"/>
     </head>
 </page>
