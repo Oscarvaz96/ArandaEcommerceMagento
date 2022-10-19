@@ -1,0 +1,31 @@
+<?php 
+    $imagesPath = $block->readImages();
+?>
+
+<div class="home-slider-wrapper">
+    <div class="home-slider-main below-padding">
+        <ul class="home-slider" id="home-slider">
+            <?php foreach($imagesPath as $key=> $path):?>
+                <li><a href="#"><img class="image-responsive middle-block" src="<?php echo $block->getBaseUrl() . $path ?>" alt="home banner "<?= $key;?> /> </a></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <script type="text/x-magento-init">
+    {
+        "#home-slider": {
+            "carousel": {
+                    "items": 1,
+                    "itemsDesktop": [1198, 1],
+                    "itemsDesktopSmall": [1023, 1],
+                    "itemsTablet": [768, 1],
+                    "itemsTabletSmall": [767, 1],
+                    "itemsMobile": [479, 1],
+                    "pagination": true,
+                    "navigationText": ["<div class='left-arrow'><i class='fa fa-angle-left'></i></div>", "<div class='right-arrow'><i class='fa fa-angle-right'></div>"],
+                    "navigation": true,
+                    "autoPlay": true
+            }
+        }
+    }
+    </script>
+</div>
